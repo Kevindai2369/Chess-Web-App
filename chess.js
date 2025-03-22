@@ -88,3 +88,30 @@ const playWithAI = (fenPosition) => {
 };
 
 export { signUp, signIn, createGame, joinGame, listenForGameUpdates, playWithAI };
+
+// UI Elements for Login and Dashboard
+const setupUI = () => {
+    document.getElementById("signup-btn").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      signUp(email, password);
+    });
+  
+    document.getElementById("signin-btn").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      signIn(email, password);
+    });
+  
+    document.getElementById("play-ai").addEventListener("click", () => {
+      window.location.href = "game-ai.html";
+    });
+  
+    document.getElementById("play-multiplayer").addEventListener("click", () => {
+      createGame();
+    });
+  };
+  
+  document.addEventListener("DOMContentLoaded", setupUI);
+  
+  export { signUp, signIn, createGame, joinGame, listenForGameUpdates, playWithAI };
